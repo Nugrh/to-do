@@ -12,14 +12,16 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         // TODO: view index
 
         $todos = Todo::all();
-        $id = Todo::all()->find('id');
+        Todo::orderBy('created_at');
 
-        return view('home', compact('todos', 'id')) ;
+        $value = $request->cookie('checkbox');
+
+        return view('home', compact('todos', 'value')) ;
     }
 
     /**
@@ -98,4 +100,5 @@ class TodoController extends Controller
         $todo->delete();
         return redirect('/');
     }
+
 }

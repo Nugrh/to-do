@@ -20,19 +20,19 @@
 {{--                        TODO: List--}}
 
                         <table class="table table-hover ">
-                                <tbody>
-                                    @foreach($todos as $todo)
-                                    <tr class="justify-content-start">
-                                        <td>
-                                            <input class="form-check-input" type="checkbox" name="checkbox" id="{{$todo->id}}">
-                                            <label class="form-check-label ms-3" for="{{$todo->id}}">{{$todo->todo}}</label>
-                                        </td>
-                                        <td class="col-1 mr-auto">
-                                            <a href="./{{$todo->id}}/delete" class="link-danger" style="text-decoration: none">Delete</a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
+                            <tbody>
+                                @foreach($todos as $todo)
+                                <tr class="justify-content-start">
+                                    <td>
+                                        <input class="form-check-input" type="checkbox" name="checkbox" id="{{$todo->id}}">
+                                        <label class="form-check-label ms-3" for="{{$todo->id}}">{{$todo->todo}}</label>
+                                    </td>
+                                    <td class="col-1 mr-auto">
+                                        <a href="./{{$todo->id}}/delete" class="link-danger" style="text-decoration: none">Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
